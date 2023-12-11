@@ -4,11 +4,15 @@
 
 ```npm install```
 
+Create a .env for port, accessToken, refreshToken
+
 ```node index.js```
 
 In another terminal
 
 `cd client`
+
+Create a .env for port, accessToken, refreshToken
 
 `npm install`
 
