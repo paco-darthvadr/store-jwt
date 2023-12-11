@@ -5,7 +5,7 @@ const Home = () => {
   const handleLogin = async () => {
     try {
       const walletRedirectUrl = await AuthService.getChallenge();
-      console.log("walletRedirectUrl", walletRedirectUrl);
+      console.log("ThisONEwalletRedirectUrl", walletRedirectUrl.data);
       window.location.assign(walletRedirectUrl.data);
     } catch (e) {
       console.log(e.message);

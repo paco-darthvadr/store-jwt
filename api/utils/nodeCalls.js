@@ -2,21 +2,21 @@ const axios = require('axios');
 const { Client } = require('pg');
 
 var client = new Client({
-    user: 'verus',
-    password: 'password',
-    database: 'verus',
-    host: '192.168.1.121',
-    port: 5432
-  });
+  user: "postgres",
+  password: "cubase2356",
+  database: "postgres",
+  host: "localhost",
+  port: 5432
+});
 client.connect();
 
 axios.defaults.withCredentials = true;
 
 const vrsctest = axios.create({
-    baseURL: "http://localhost:20656/" , //process.env.VRSCTEST_RPC_URL,
+    baseURL: "http://localhost:18299/" , //process.env.VRSCTEST_RPC_URL,
     auth: {
         username: "verusdesktop" , //process.env.VRSCTEST_RPC_USER || '',
-        password: "6bVvhDKGvrP5WqBNOk8mWlsqxQTly7ER7IE7_WjzhYk", // process.env.VRSCTEST_RPC_PASSWORD || '',
+        password: "fBMqvHKVQpDkjKSYPQbVjF7hU8FgsiaWon0TVy0TovI", // process.env.VRSCTEST_RPC_PASSWORD || '',
     }
 });
 
@@ -63,7 +63,7 @@ const signMessage = async (loginConsentChallenge) => {
       jsonrpc: '2.0',
       method: 'signmessage',
       params: [
-          "verus-login-consent@",   //ID that you hold to sign your websites outgoing messages
+          "yolo1@",   //ID that you hold to sign your websites outgoing messages
           loginConsentChallenge.toString()
       ]})
       if(daemonReply.data?.result)

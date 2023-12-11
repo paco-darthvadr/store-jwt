@@ -21,7 +21,7 @@ const checkLogin = async (queryString) => {
             JSON.parse(buff.toString())
         );
 
-      //  console.log("loginConsentResponse", loginConsentResponse);
+        //console.log("loginConsentResponse", loginConsentResponse);
 
         const params = [
             loginConsentResponse.signing_id,

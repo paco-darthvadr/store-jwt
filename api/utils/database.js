@@ -2,13 +2,12 @@ const Axios = require("axios");
 const { Client } = require("pg");
 
 var client = new Client({
-  user: "verus",
-  password: "password",
-  database: "verus",
-  host: "192.168.1.121",
-  port: 5432,
+  user: "postgres",
+  password: "cubase2356",
+  database: "users",
+  host: "localhost",
+  port: 5432
 });
-
 client.connect();
 
 exports.checkUser = async (userid) => {
@@ -53,7 +52,7 @@ exports.signMessage = async (loginConsentChallenge) => {
     const result = await Axios.post("http://localhost:3001/signmessage", {
       params: loginConsentChallenge.toString(),
     }).then((response) => {
-      // console.log("Reply from verus sign message: ",response.data.signature);
+      //console.log("Reply from verus sign message: ",response.data.signature);
       return response.data.signature;
     });
 
@@ -70,7 +69,7 @@ exports.verifyMessage = async (params) => {
     const result = await Axios.post("http://localhost:3001/verifymessage", {
       params: JSON.stringify(params),
     }).then((response) => {
-      //  console.log("Reply from verus check signed message: ",response.data.signaturevalid);
+      //console.log("Reply from verus check signed message: ",response.data.signaturevalid);
       return response.data.signaturevalid;
     });
 

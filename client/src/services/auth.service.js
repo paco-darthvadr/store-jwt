@@ -1,5 +1,6 @@
 import Axios from "axios";
 
+
 const API_URL = "/auth";
 
 const signup = (email, password) => {

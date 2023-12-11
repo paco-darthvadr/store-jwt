@@ -17,7 +17,7 @@ const VerifyLogin = () => {
   useEffect(async () => {
    
     const queryString = window.location.search;
-    //console.log("query",queryString);
+    console.log("query",queryString);
     const tokenDetails = await AuthService.checkLoginChallenge(queryString);
 
     if(tokenDetails?.registered)
